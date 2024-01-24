@@ -2,7 +2,7 @@
     <form @submit.prevent="create">
       <div>
         <div>
-          <label>Beds</label>
+          <label>Camas</label>
           <input type="text" v-model.number="form.beds"/>
           <div v-if="form.errors.beds">
                 {{ form.errors.beds }}
@@ -10,7 +10,7 @@
         </div>
 
         <div>
-          <label>Baths</label>
+          <label>Banheiros</label>
           <input type="text" v-model.number="form.baths"/>
           <div v-if="form.errors.baths">
                 {{ form.errors.baths }}
@@ -26,7 +26,7 @@
         </div>
 
         <div>
-          <label>City</label>
+          <label>Cidade</label>
           <input type="text" v-model.number="form.city"/>
           <div v-if="form.errors.city">
                 {{ form.errors.city }}
@@ -34,7 +34,7 @@
         </div>
 
         <div>
-          <label>Post Code</label>
+          <label>CEP</label>
           <input type="text" v-model.number="form.code"/>
           <div v-if="form.errors.code">
                 {{ form.errors.code }}
@@ -42,7 +42,7 @@
         </div>
 
         <div>
-          <label>Street</label>
+          <label>Endereço</label>
           <input type="text" v-model.number="form.street"/>
           <div v-if="form.errors.street">
                 {{ form.errors.street }}
@@ -50,7 +50,7 @@
         </div>
 
         <div>
-          <label>Street Nr</label>
+          <label>Número</label>
           <input type="text" v-model.number="form.street_number"/>
           <div v-if="form.errors.street_number">
                 {{ form.errors.street_number }}
@@ -58,7 +58,7 @@
         </div>
 
         <div>
-          <label>Price</label>
+          <label>Preço</label>
           <input type="text" v-model.number="form.price"/>
           <div v-if="form.errors.price">
                 {{ form.errors.price }}
@@ -66,7 +66,7 @@
         </div>
 
         <div>
-          <button type="submit">Create</button>
+          <button type="submit">Criar</button>
         </div>
       </div>
     </form>

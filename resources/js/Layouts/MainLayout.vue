@@ -1,6 +1,6 @@
 <template>
-    <Link href="/listing">Listings</Link>&nbsp;
-    <Link href="/listing/create">New Listing</Link>
+    <Link href="/listing">Anunciados </Link>&nbsp;
+    <Link href="/listing/create">Novo Anúncio</Link>
     <!-- <div>Contador: {{ timer }} </div> -->
     <div v-if="flashSuccess" class="success">
 {{ flashSuccess }}

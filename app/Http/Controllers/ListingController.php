@@ -36,7 +36,7 @@ class ListingController extends Controller
             ])
         );
 
-        return redirect()->route('listing.index')->with('success','Registro Criado com sucesso!');
+        return redirect()->route('listing.index')->with('success','Anúncio Criado com sucesso!');
     }
 
     public function show(Listing $listing)
@@ -70,7 +70,7 @@ class ListingController extends Controller
             ])
         );
 
-        return redirect()->route('listing.index')->with('success','Registro Atualizado com sucesso!');
+        return redirect()->route('listing.index')->with('success','Anúncio Atualizado com sucesso!');
     }
 
     public function destroy(Listing $listing)
@@ -78,6 +78,6 @@ class ListingController extends Controller
         $listing->delete();
 
         return redirect()->back()
-            ->with('success','Registro excluido com sucesso!');
+            ->with('success','Anúncio excluido com sucesso!');
     }
 }

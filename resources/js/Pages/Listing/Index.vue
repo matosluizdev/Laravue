@@ -6,10 +6,10 @@
         </Link>
     </div>
     <div>
-        <Link :href="route('listing.edit', listing.id)">Edit</Link>
+        <Link :href="route('listing.edit', listing.id)">Editar</Link>
     </div>
     <div>
-        <Link :href="route('listing.destroy', listing.id)" method="DELETE">Delete</Link>
+        <Link :href="route('listing.destroy', listing.id)" method="DELETE">Excluir</Link>
     </div>
     </div>
 </template>
