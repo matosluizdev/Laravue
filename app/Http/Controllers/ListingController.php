@@ -12,10 +12,7 @@ class ListingController extends Controller
     {
         return inertia('Listing/Index',
         [
-         'listings' => Listing::all(),
-         'show' => route('listing.show', ['listing' => ':id']),
-         'edit' => route('listing.edit', ['listing' => ':id']),
-         'destroy' => route('listing.destroy', ['listing' => ':id']),
+         'listings' => Listing::all()
         ]);
     }
 
