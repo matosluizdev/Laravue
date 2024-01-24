@@ -1,15 +1,15 @@
 <template>
     <div v-for="listing in listings" :key="listing.id">
     <div>
-        <Link :href="`/listing/${listing.id}`">
+        <Link :href="show.replace(':id', listing.id)">
                 <ListingAddress :listing="listing" />
         </Link>
     </div>
     <div>
-        <Link :href="`/listing/${listing.id}/edit`">Edit</Link>
+        <Link :href="edit.replace(':id', listing.id)">Edit</Link>
     </div>
     <div>
-        <Link :href="`/listing/${listing.id}`" method="DELETE">Delete</Link>
+        <Link :href="destroy.replace(':id', listing.id)" method="DELETE">Delete</Link>
     </div>
     </div>
 </template>
@@ -20,5 +20,8 @@ import { Link } from '@inertiajs/vue3';
 import ListingAddress from '../../Components/ListingAddress.vue';
 defineProps({
     listings: Array,
+    show: String,
+    edit: String,
+    destroy: String
 })
 </script>
