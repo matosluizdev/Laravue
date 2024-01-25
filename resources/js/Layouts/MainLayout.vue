@@ -14,10 +14,14 @@
             </nav>
         </div>
     </header>
-    <div v-if="flashSuccess" class="success">
-{{ flashSuccess }}
-    </div>
-    <slot>Valor padrão caso falhe</slot>
+
+    <main class="container p-5 mx-auto">
+        <div v-if="flashSuccess" class="p-2 mb-5 bg-green-300 border border-green-200 rounded-md shadow-sm dark:bg-green-900 dark:border-green-700">
+            {{ flashSuccess }}
+        </div>
+        <slot>Valor padrão</slot>
+    </main>
+
 </template>
 
 <script setup>
