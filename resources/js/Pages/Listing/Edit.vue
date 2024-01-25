@@ -2,7 +2,7 @@
     <form @submit.prevent="update">
       <div>
         <div>
-            <label>Camas</label>
+            <label>Quartos</label>
           <input type="text" v-model.number="form.beds"/>
           <div v-if="form.errors.beds">
                 {{ form.errors.beds }}
