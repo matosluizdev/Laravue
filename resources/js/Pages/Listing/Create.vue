@@ -1,56 +1,72 @@
 <template>
     <form @submit.prevent="create">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="col-span-2">
-          <label class="label">Quartos</label>
-          <input type="text" v-model.number="form.beds" class="input"/>
-          <ErrorMessage v-if="form.errors.beds" :error="form.errors.beds" />
+      <div>
+        <div>
+          <label>Quartos</label>
+          <input type="text" v-model.number="form.beds"/>
+          <div v-if="form.errors.beds">
+                {{ form.errors.beds }}
+          </div>
         </div>
 
-        <div class="col-span-2">
-          <label class="label">Banheiros</label>
-          <input type="text" v-model.number="form.baths" class="input"/>
-          <ErrorMessage v-if="form.errors.baths" :error="form.errors.baths" />
+        <div>
+          <label>Banheiros</label>
+          <input type="text" v-model.number="form.baths"/>
+          <div v-if="form.errors.baths">
+                {{ form.errors.baths }}
+          </div>
         </div>
 
-        <div class="col-span-2">
-          <label class="label">Area</label>
-          <input type="text" v-model.number="form.area" class="input"/>
-          <ErrorMessage v-if="form.errors.area" :error="form.errors.area" />
+        <div>
+          <label>Area</label>
+          <input type="text" v-model.number="form.area"/>
+          <div v-if="form.errors.area">
+                {{ form.errors.area }}
+          </div>
         </div>
 
-        <div class="col-span-4">
-          <label class="label">Cidade</label>
-          <input type="text" v-model.number="form.city" class="input"/>
-          <ErrorMessage v-if="form.errors.city" :error="form.errors.city" />
+        <div>
+          <label>Cidade</label>
+          <input type="text" v-model.number="form.city"/>
+          <div v-if="form.errors.city">
+                {{ form.errors.city }}
+          </div>
         </div>
 
-        <div class="col-span-2">
-          <label class="label">CEP</label>
-          <input type="text" v-model.number="form.code" class="input"/>
-          <ErrorMessage v-if="form.errors.code" :error="form.errors.code" />
+        <div>
+          <label>CEP</label>
+          <input type="text" v-model.number="form.code"/>
+          <div v-if="form.errors.code">
+                {{ form.errors.code }}
+          </div>
         </div>
 
-        <div class="col-span-4">
-          <label class="label">Endereço</label>
-          <input type="text" v-model.number="form.street" class="input"/>
-          <ErrorMessage v-if="form.errors.street" :error="form.errors.street" />
+        <div>
+          <label>Endereço</label>
+          <input type="text" v-model.number="form.street"/>
+          <div v-if="form.errors.street">
+                {{ form.errors.street }}
+          </div>
         </div>
 
-        <div class="col-span-2">
-          <label class="label">Número</label>
-          <input type="text" v-model.number="form.street_number" class="input"/>
-          <ErrorMessage v-if="form.errors.street_number" :error="form.errors.street_number" />
+        <div>
+          <label>Número</label>
+          <input type="text" v-model.number="form.street_number"/>
+          <div v-if="form.errors.street_number">
+                {{ form.errors.street_number }}
+          </div>
         </div>
 
-        <div class="col-span-6">
-          <label class="label">Preço</label>
-          <input type="text" v-model.number="form.price" class="input"/>
-          <ErrorMessage v-if="form.errors.price" :error="form.errors.price" />
+        <div>
+          <label>Preço</label>
+          <input type="text" v-model.number="form.price"/>
+          <div v-if="form.errors.price">
+                {{ form.errors.price }}
+          </div>
         </div>
 
-        <div class="col-span-6">
-          <button class="btn-primary" type="submit">Postar</button>
+        <div>
+          <button type="submit">Criar</button>
         </div>
       </div>
     </form>
