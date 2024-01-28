@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .label {
+        @apply block mb-2 font-medium text-gray-700 dark:text-gray-300
+    }
+
+    .input {
+        @apply block w-full p-2 text-gray-700 border border-gray-300 rounded-md shadow-sm dark:border-gray-600
+    }
+
+    .btn-primary {
+        @apply p-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500
+    }
+}

@@ -9,7 +9,7 @@
                     <Link :href="route('listing.index')">LaraLouis</Link>
                 </div>
                 <div>
-                    <Link :href="route('listing.create')" class="p-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500">+ Novo Anúncio</Link>
+                    <Link :href="route('listing.create')" class="btn-primary">+ Novo Anúncio</Link>
                 </div>
             </nav>
         </div>

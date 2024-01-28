@@ -1,71 +1,71 @@
 <template>
     <form @submit.prevent="update">
-      <div>
-        <div>
-            <label>Quartos</label>
-          <input type="text" v-model.number="form.beds"/>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-2">
+            <label class="label">Quartos</label>
+          <input class="input" type="text" v-model.number="form.beds"/>
           <div v-if="form.errors.beds">
                 {{ form.errors.beds }}
           </div>
         </div>
 
-        <div>
-          <label>Banheiros</label>
-          <input type="text" v-model.number="form.baths"/>
+        <div class="col-span-2">
+          <label class="label">Banheiros</label>
+          <input class="input" type="text" v-model.number="form.baths"/>
           <div v-if="form.errors.baths">
                 {{ form.errors.baths }}
           </div>
         </div>
 
-        <div>
-          <label>Area</label>
-          <input type="text" v-model.number="form.area"/>
+        <div class="col-span-2">
+          <label class="label">Area</label>
+          <input class="input" type="text" v-model.number="form.area"/>
           <div v-if="form.errors.area">
                 {{ form.errors.area }}
           </div>
         </div>
 
-        <div>
-          <label>Cidade</label>
-          <input type="text" v-model.number="form.city"/>
+        <div class="col-span-4">
+          <label class="label">Cidade</label>
+          <input class="input" type="text" v-model.number="form.city"/>
           <div v-if="form.errors.city">
                 {{ form.errors.city }}
           </div>
         </div>
 
-        <div>
-          <label>CEP</label>
-          <input type="text" v-model.number="form.code"/>
+        <div class="col-span-2">
+          <label class="label">CEP</label>
+          <input class="input" type="text" v-model.number="form.code"/>
           <div v-if="form.errors.code">
                 {{ form.errors.code }}
           </div>
         </div>
 
-        <div>
-          <label>Endereço</label>
-          <input type="text" v-model.number="form.street"/>
+        <div class="col-span-4">
+          <label class="label">Endereço</label>
+          <input class="input" type="text" v-model.number="form.street"/>
           <div v-if="form.errors.street">
                 {{ form.errors.street }}
           </div>
         </div>
 
-        <div>
-          <label>Número</label>
-          <input type="text" v-model.number="form.street_number"/>
+        <div class="col-span-2">
+          <label class="label">Número</label>
+          <input class="input" type="text" v-model.number="form.street_number"/>
           <div v-if="form.errors.street_number">
                 {{ form.errors.street_number }}
           </div>
         </div>
 
-        <div>
-          <label>Preço</label>
-          <input type="text" v-model.number="form.price"/>
+        <div class="col-span-6">
+          <label class="label">Preço</label>
+          <input class="input" type="text" v-model.number="form.price"/>
           <div v-if="form.errors.price">
                 {{ form.errors.price }}
           </div>
         </div>
-        <div>
-          <button type="submit">Atualizar</button>
+        <div class="col-span-6">
+          <button class="btn-primary" type="submit">Atualizar</button>
         </div>
       </div>
     </form>
