@@ -8,7 +8,7 @@
 - ``Inertia 1.0``
 - ``Vue3``
 - ``Vite``
-- ``Tailwind``
+- ``TailwindCSS``
 
 # 📰Referências
 - [LaravelDocs](https://laravel.com/docs/10.x)
