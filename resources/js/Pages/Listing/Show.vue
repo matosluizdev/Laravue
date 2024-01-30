@@ -2,13 +2,13 @@
     <div class="flex flex-col-reverse grid-cols-12 gap-4 md:grid">
         <Box class="flex items-center w-full md:col-span-7">
             <div class="w-full font-medium text-center text-gray-500">
-                No images
+                Sem imagens
             </div>
         </Box>
         <div class="flex flex-col gap-4 md:col-span-5">
             <Box>
                 <template #header>
-                    Basic Info
+                    Informações
                 </template>
                 <Price :price="listing.price" class="text-2xl" />
                 <ListingSpace :listing="listing" class="text-lg" />
@@ -16,9 +16,16 @@
             </Box>
             <Box>
             <template #header>
-                Offer
+                Pagamento Mensal
             </template>
-                Make an offer
+                <label> Grau de interesse (2,5%)</label>
+                <input type="range" min="0.1" max="30" step="0.1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
+                <label> Duração (25 anos)</label>
+                <input type="range" min="3" max="35" step="1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
+                <div class="text-gray-600 dark:text-gray-300 mt 2">
+                    <div class="text-gray-400">Seu pagamento mensal</div>
+                    <Price :price="500" class="text-3xl"/>
+                </div>
             </Box>
         </div>
     </div>
