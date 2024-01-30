@@ -18,13 +18,13 @@
             <template #header>
                 Pagamento Mensal
             </template>
-                <label> Grau de interesse (2,5%)</label>
-                <input type="range" min="0.1" max="30" step="0.1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
-                <label> Duração (25 anos)</label>
-                <input type="range" min="3" max="35" step="1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
+                <label> Grau de interesse ({{ interestRate }}%)</label>
+                <input v-model.number="interestRate" type="range" min="0.1" max="30" step="0.1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
+                <label> Duração ({{ duration }} anos)</label>
+                <input v-model.number="duration" type="range" min="3" max="35" step="1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
                 <div class="text-gray-600 dark:text-gray-300 mt 2">
                     <div class="text-gray-400">Seu pagamento mensal</div>
-                    <Price :price="500" class="text-3xl"/>
+                    <Price :price="monthlyPayment" class="text-3xl"/>
                 </div>
             </Box>
         </div>
@@ -36,7 +36,22 @@ import ListingAddress from '@/Components/ListingAddress.vue';
 import ListingSpace from '@/Components/ListingSpace.vue';
 import Price from '@/Components/Price.vue';
 import Box from '@/Components/UI/Box.vue';
-defineProps({
+import {ref, computed} from 'vue'
+
+const interestRate = ref(2.5)
+const duration = ref(25)
+
+const props = defineProps({
     listing: Object,
 })
+
+const monthlyPayment = computed(
+    () => {
+        const principle = props.listing.price
+        const monthlyInterest = interestRate.value / 100 / 12
+        const numberOfPaymentMonths = duration.value * 12
+
+        return principle * monthlyInterest * (Math.pow(1 + monthlyInterest, numberOfPaymentMonths)- 1)
+    }
+)
 </script>
