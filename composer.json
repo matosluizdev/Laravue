@@ -52,7 +52,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+
+        "pas": "php artisan serve"
     },
     "extra": {
         "laravel": {
