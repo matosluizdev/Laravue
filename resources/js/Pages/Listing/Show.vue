@@ -18,7 +18,7 @@
             <template #header>
                 Pagamento Mensal
             </template>
-                <label> Grau de interesse ({{ interestRate }}%)</label>
+                <label> Taxa de Juros ({{ interestRate }}%)</label>
                 <input v-model.number="interestRate" type="range" min="0.1" max="30" step="0.1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
                 <label> Duração ({{ duration }} anos)</label>
                 <input v-model.number="duration" type="range" min="3" max="35" step="1" class="w-full h-4 bg-gray-200 appearance-none cursor-pointer rounde-lg dark:bg-gray-700">
