@@ -1,19 +1,35 @@
-import { computed, isRef} from 'vue'
+import { computed, isRef } from 'vue'
 
 export const useMonthlyPayment = (total, interestRate, duration) => {
-    const monthlyPayment = computed(
-        () => {
-            const principle = isRef(total) ? total.value : total
-            const monthlyInterest = (isRef(interestRate) ? interestRate.value : interestRate) / 100 / 12
-            const numberOfPaymentMonths = (isRef(duration) ? duration.value : duration) * 12
+    const monthlyInterestRate = computed(() => {
+        return (isRef(interestRate) ? interestRate.value : interestRate) / 100 / 12
+    })
 
-            return principle * monthlyInterest * (Math.pow(1 + monthlyInterest, numberOfPaymentMonths)- 1)
-        })
-        const totalPaid = computed(() => {
-            return (isRef(duration) ? duration.value : duration) * 12 * monthlyPayment.value
-          })
+    const numberOfPaymentMonths = computed(() => {
+        return (isRef(duration) ? duration.value : duration) * 12
+    })
 
-          const totalInterest = computed(() => totalPaid.value - (isRef(total) ? total.value : total))
+    const principle = computed(() => {
+        return isRef(total) ? total.value : total
+    })
 
-          return { monthlyPayment, totalPaid, totalInterest }
+    const monthlyPayment = computed(() => {
+        const P = principle.value
+        const r = monthlyInterestRate.value
+        const n = numberOfPaymentMonths.value
+
+        const monthlyPayment = P * r / (1 - Math.pow(1 + r, -n))
+
+        return monthlyPayment
+    })
+
+    const totalPaid = computed(() => {
+        return monthlyPayment.value * numberOfPaymentMonths.value
+    })
+
+    const totalInterest = computed(() => {
+        return totalPaid.value - principle.value
+    })
+
+    return { monthlyPayment, totalPaid, totalInterest }
 }

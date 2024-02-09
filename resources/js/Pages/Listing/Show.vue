@@ -29,7 +29,7 @@
 
                 <div class="mt-2 text-gray-500">
                     <div class="flex justify-between">
-                        <div>Total Pago em juros</div>
+                        <div>Total Pago com juros</div>
                         <div>
                             <Price :price="totalPaid" class="font-medium" />
                         </div>
