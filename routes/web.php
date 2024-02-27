@@ -22,4 +22,4 @@ Route::delete('logout', [AuthController::class, 'destroy'])
 ->name('logout');
 
 Route::resource('user', UserAccountController::class)
-    ->only('create');
+    ->only('create','store');
